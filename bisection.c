@@ -1,39 +1,39 @@
 #include<stdio.h>
-
-float function(float x)
+long double function(long double x)
 {
-    return (x*x*x)-x-11;
+    long double function=(x*x*x)-x-11;
+    return function;
 }
 
-void bisection(float a, float b, int n)
+void bisection(long double alpha, long double bita, long long int n)
 {
-    float x,f_of_x;
-    int i;
-    for(i=0;i<=n;i++)
+    long double x,function_of_x;
+    long long int i;
+    for(i=0; i<=n; i++)
     {
-         x=(a+b)/2;
+        x=(alpha+bita)/2;
 
-         printf(" X%d = %f   ",i,x);
+        printf(" X%lld = %.15llf   ",i,x);
 
-         f_of_x=function(x);
+        function_of_x=function(x);
 
-         printf(" F(X%d) = %f \n",i,f_of_x);
+        printf(" F(X%lld) = %.15llf \n",i,function_of_x);
 
-        if(f_of_x>0)
-            b=x;
+        if(function_of_x>0)
+            bita=x;
         else
-            a=x;
+            alpha=x;
     }
 }
 int main()
 {
-    float a=2,b=3;
-    int n;
+    long double alpha=2,bita=3;
+    long long int n;
 
     printf("How many iretation = ");
-    scanf("%d",&n);
+    scanf("%lld",&n);
 
-    bisection(a,b,n);
+    bisection(alpha,bita,n);
 
     return 0;
 }
