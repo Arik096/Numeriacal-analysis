@@ -5,7 +5,7 @@ for i=0:50
         b=i+1;
         break;
     end;
-end;
+ end;
 for i=1:6
     x=((a*f(b))-b*f(a))/(f(b)-f(a));
     fprintf('a=%f b=%f x%d=%f f(x%d)=%f\n',a,b,i,x,i,f(x));
